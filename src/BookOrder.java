@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 
+// TODO: Auto-generated Javadoc
 /**
  * ---------------------------------------------------------------------------
  * File name: BookOrder.java
@@ -12,7 +13,7 @@ import java.text.DecimalFormat;
  */
 
 /**
- * Enter type purpose here
+ * Book Order Class For Make An Invoice For Customer
  *
  * <hr>
  * Date created: Nov 21, 2015
@@ -21,57 +22,54 @@ import java.text.DecimalFormat;
  */
 public class BookOrder
 {
- 	String author;
-	String title;
- 	int quantity;
- 	double costPerBook;		//cost of ONE book
- 	String orderDate;
- 	double weight;			//weight of the book in ounces
-	char type;				// possible values:   R   -for rush (1-3 day delivery),  O – overnight, P – parcel post,
-							//F –  FedEx , U – UPS,  N- 2-3 weeks//F –  FedEx , U – UPS,  N- 2-3 weeks
-	
+	 private String author;			//Name Of Author
+	 private String title;			//Title Of Book
+	 private int quantity;			//Quantity Of Books
+	 private double costPerBook;	//cost of ONE book
+	 private String orderDate;		//Order Date Of Invoice
+	 private double weight;			//weight of the book in ounces
+	 private char type;				// possible values:   R   -for rush (1-3 day delivery),  O – overnight, P – parcel post,
+									//F –  FedEx , U – UPS,  N- 2-3 weeks//F –  FedEx , U – UPS,  N- 2-3 weeks
 	/**
 	 * Constructor        
-	 *
-	 * <hr>
-	 * Date created: Nov 21, 2015 
-	 *
 	 * 
-	 */
+	 * <hr>
+	 * Date created: Nov 21, 2015 .
+	*/
 	
 	public BookOrder ( )
 	{
-	}
+	}//End BookOrder ( )
+	
 	/**
 	 * Constructor        
-	 *
-	 * <hr>
-	 * Date created: Nov 21, 2015 
-	 *
 	 * 
-	 * @param author
-	 * @param title
+	 * <hr>
+	 * Date created: Nov 21, 2015 .
+	 *
+	 * @param author the author
+	 * @param title the title
 	 */
 	public BookOrder (String author, String title)
 	{
 		super ( );
 		setAuthor(author);
 		setTitle(title);
-	}
+	}//End BookOrder (String,String)
+	
 	/**
 	 * Constructor        
-	 *
-	 * <hr>
-	 * Date created: Nov 21, 2015 
-	 *
 	 * 
-	 * @param author
-	 * @param title
-	 * @param quantity					 
-	 * @param costPerBook
-	 * @param orderDate
-	 * @param weight
-	 * @param type
+	 * <hr>
+	 * Date created: Nov 21, 2015 .
+	 *
+	 * @param author the author
+	 * @param title the title
+	 * @param quantity the quantity
+	 * @param costPerBook the cost per book
+	 * @param orderDate the order date
+	 * @param weight the weight
+	 * @param type the type
 	 */						
 	public BookOrder (	String author, String title, int quantity,
 		                  	double costPerBook, String orderDate, double weight,
@@ -85,14 +83,15 @@ public class BookOrder
 		setOrderDate(orderDate);
 		setWeight(weight);
 		setType(type);
-	}				
+	}//End BookOrder (String,String,int,double,String,double,char)			
+	
 	/**
 	 * Copy Constructor        
-	 *
-	 * <hr>
-	 * Date created: Nov 21, 2015 
-	 *
 	 * 
+	 * <hr>
+	 * Date created: Nov 21, 2015 .
+	 *
+	 * @param order the order
 	 */
 	public BookOrder (BookOrder order)
 	{
@@ -102,149 +101,181 @@ public class BookOrder
 		this.costPerBook = order.costPerBook;
 		this.orderDate = order.orderDate;
 		this.weight = order.weight;
-	}
+		this.type = order.type;
+	}//End BookOrder (BookOrder) 
+	
 	/**
+	 * Gets the author.
+	 *
 	 * @return author
 	 */
 	public String getAuthor ( )
 	{
 		return author;
-	}
-
+	}//End getAuthor ( )
 	
 	/**
+	 * Sets the author.
+	 *
 	 * @param author the author to set
 	 */
 	public void setAuthor (String author)
 	{
 		if (author.length() > 0)
 			this.author=author;
-	}
-
+	}//End setAuthor (String)
 	
 	/**
+	 * Gets the title.
+	 *
 	 * @return title
 	 */
 	public String getTitle ( )
 	{
 		return title;
-	}
-
+	}//End getTitle ()
 	
 	/**
+	 * Sets the title.
+	 *
 	 * @param title the title to set
 	 */
 	public void setTitle (String title)
 	{
 		if (title.length() > 0)
 		this.title = title;
-	}
-
+	}//End setTitle (String)
 	
 	/**
+	 * Gets the quantity.
+	 *
 	 * @return quantity
 	 */
 	public int getQuantity ( )
 	{
-		
 		return quantity;
-	}
-
+	}//End getQuantity 
 	
 	/**
+	 * Sets the quantity.
+	 *
 	 * @param quantity the quantity to set
 	 */
 	public void setQuantity (int quantity)
 	{
 		if (quantity >= 0)
 		this.quantity = quantity;
-	}
-
+	}//End setQuantity (int)
 	
 	/**
+	 * Gets the cost per book.
+	 *
 	 * @return costPerBook
 	 */
 	public double getCostPerBook ( )
 	{
 		return costPerBook;
-	}
-
+	}//End getCostPerBook()
 	
 	/**
+	 * Sets the cost per book.
+	 *
 	 * @param costPerBook the costPerBook to set
 	 */
 	public void setCostPerBook (double costPerBook)
 	{
 		if (costPerBook >= 0)
 		this.costPerBook = costPerBook;
-	}
-
+	}//End setCostPerBook(double)
 	
 	/**
+	 * Gets the order date.
+	 *
 	 * @return orderDate
 	 */
 	public String getOrderDate ( )
 	{
 		return orderDate;
-	}
-
+	}//End getOrderDate ()
 	
 	/**
+	 * Sets the order date.
+	 *
 	 * @param orderDate the orderDate to set
 	 */
 	public void setOrderDate (String orderDate)
 	{
 		if (orderDate.length() > 0)
 		this.orderDate = orderDate;
-	}
-
+	}//End setOrderDate (String)
 	
 	/**
+	 * Gets the weight.
+	 *
 	 * @return weight
 	 */
 	public double getWeight ( )
 	{
 		return weight;
-	}
-
+	}//End getWeight()
 	
 	/**
+	 * Sets the weight.
+	 *
 	 * @param weight the weight to set
 	 */
 	public void setWeight (double weight)
 	{
 		if (weight >= 0)
 		this.weight = weight;
-	}
-
+	}//End setWeight(double)
 	
 	/**
+	 * Gets the type.
+	 *
 	 * @return type
 	 */
 	public char getType ( )
 	{
 		return type;
 	}//End getType()
+	
 	/**
-	 * @param type the type to set
-	 * @return 
+	 * Sets the type.
+	 *
+	 * @param type the new type
 	 */
 	public void setType (char type)
 	{
-		int iX;					//Counter
-		String strType; 
-		char[] errorCheck = {'r','R','o','O','p','P','f','F','u','U','n','N'};
-		for(iX = 0;iX<errorCheck.length;iX++)
+		String strType;		//Hold  Value Of type For UpperCase Method
+		char cUpType;		//Hold UpperCase Value Of type
+		strType = Character.toString(type);
+		strType = strType.toUpperCase();
+		cUpType = strType.charAt(0);
+		switch (cUpType)
 		{
-			if (errorCheck[iX]!= type);
-			{
-				strType = "n";
-			}
-			strType = Character.toString(type);
-			strType = strType.toUpperCase();
-			this.type = strType.charAt(0);
+		case 'R':
+		case 'O':
+		case 'P':
+		case 'F':
+		case 'U':
+			this.type = cUpType;
+			break;
+		default:
+			this.type = 'N';
 		}
-	}//End setType()
+		
+	}//End setType(char)
+	
+	/**
+	 * Assign values.
+	 *
+	 * @param quantity the quantity
+	 * @param costPerBook the cost per book
+	 * @param orderDate the order date
+	 * @param weight the weight
+	 * @param type the type
+	 */
 	public void assignValues( int quantity,double costPerBook, String orderDate, double weight,
 								char type)
 	{
@@ -254,24 +285,28 @@ public class BookOrder
 		setWeight(weight);
 		setType(type);
 	}//End assignValues(int,double,String,double,char)
+	
+	/**
+	 * Adjust quantity.
+	 *
+	 * @param adjust the adjust
+	 * @return iValid
+	 */
 	public int adjustQuantity(int adjust)
 	{
-		int iValid = -1;		//User Input Was Assigned
-		if (quantity != 0);
+		
+		int zero =quantity+adjust;
+		if (zero >= 0)
 		{
-			if (adjust > 0)
-			{
-				quantity++;
-				iValid = adjust;
-			}
-			else 
-			{
-				quantity--;
-				iValid = adjust;
-			}
-		}	
-		return iValid;	
-	}//End adjustQuantity(int)
+				this.quantity+=adjust;
+		}
+		return this.quantity;
+	}
+	/**
+	 * Total weight.
+	 *
+	 * @return the double
+	 */
 	public double totalWeight()
 	{
 		double dTotalWeight;		//Total Weight Of Books In Ounces
@@ -279,12 +314,24 @@ public class BookOrder
 		return dTotalWeight;
 		
 	}//End totalWeight()
+	
+	/**
+	 * Calc cost.
+	 *
+	 * @return the double
+	 */
 	public double calcCost()
 	{
 		double dTotalCost;			//Total Cost Of Books
 		dTotalCost = (quantity * costPerBook);
 		return dTotalCost;
 	}//End calcCost()
+	
+	/**
+	 * Shipping.
+	 *
+	 * @return the double
+	 */
 	public double shipping ()
 	{
 		double dTotalShipping = 0;	//Total Cost Of Shipping
@@ -311,34 +358,54 @@ public class BookOrder
 		}
 		return dTotalShipping;
 	}//End shipping ()
+	
+	/**
+	 * Total cost.
+	 *
+	 * @return the double
+	 */
 	public double totalCost ()
 	{
 		double dTotalCost;			//Total Cost Of All Items
 		dTotalCost = (shipping ()+calcCost());
 		return dTotalCost;
 	}//End totalCost ()
+	
+	/**
+	 * Invoice.
+	 *
+	 * @return the string
+	 */
 	public String invoice()
 	{
-		String info = new String();
+		String info = new String(); //Hold String Object Address To Return To Main
 		DecimalFormat money = new DecimalFormat("$#,##0.00");
 		info = 
 		("\n\n**********INVOICE**********"
-		+"\n\nOrder Date:"
+		+"\n\nOrder Date: " + orderDate
 		+"\n\n       Title: " + title
 		+"\n      Author: " + author
 		+"\nCost of Book: " + money.format(costPerBook)
 		+"\n    Quantity: " + quantity
 		+"\n      Weight: " + weight
+		+"\n    Shipping: " + type
 		+"\n\n\t   Sub-Total: " + money.format(calcCost())
 		+"\n\t    Shipping: " + money.format(shipping ())
 		+"\n\t       Total: " + money.format(totalCost ())
-		+"\n\n**********INVOICE**********");
+		+"\n\n**********INVOICE**********\n");
 		return info;
 		
-	}
+	}//End Invoice()
+	
+	/**
+	 * Equals.
+	 *
+	 * @param book the book
+	 * @return true, if successful
+	 */
 	public boolean equals(BookOrder book)
 	{
-	boolean blnResults = true;	
+	boolean blnResults = true;	//True Or False Value For Method
 	if (!this.title.equals(book.title))
 	{
 		blnResults = false;
@@ -368,5 +435,5 @@ public class BookOrder
 		blnResults = false;
 	}
 	return blnResults;
-	}
-}//End Equals(BookOrder)
+	}//End Equals(BookOrder)
+}//End BookOrder()
